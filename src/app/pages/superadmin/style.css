@@ -1,0 +1,212 @@
+.admin_wrapper {
+    width: 100%;
+    background: #F4F7FE;
+}
+
+.admin_wrapper {
+    width: 100%;
+    background: #F4F7FE;
+    padding: 110px 30px 10px 360px;
+    min-height: 100vh;
+}
+.sidebar_panel .admin_nav ul {
+    list-style: none;
+    padding: 25px 25px 0 25px;
+    margin: 0;
+}
+.admin_heading_wrapper .page_heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.admin_heading_wrapper .page_heading h2 {
+    margin: 0;
+    color: #263238;
+    font-size: 24px;
+    font-weight: 600;
+}
+.react-datepicker-wrapper .react-datepicker__input-container {
+    position: relative;
+}
+.react-datepicker-wrapper .react-datepicker__input-container input[type="text"] {
+    border: solid 1px #CCD8EB;
+    height: 43px;
+    padding: 0 15px;
+    border-radius: 10px;
+    outline: none;
+    color: #333;
+}
+.react-datepicker-wrapper .react-datepicker__input-container:after {
+    content: '';
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkiIGhlaWdodD0iMTkiIHZpZXdCb3g9IjAgMCAxOSAxOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2LjE1IDEuOUgxNC4yNVYwLjk1QzE0LjI1IDAuNjk4MDQ0IDE0LjE0OTkgMC40NTY0MDggMTMuOTcxOCAwLjI3ODI0OUMxMy43OTM2IDAuMTAwMDg5IDEzLjU1MiAwIDEzLjMgMEMxMy4wNDggMCAxMi44MDY0IDAuMTAwMDg5IDEyLjYyODIgMC4yNzgyNDlDMTIuNDUwMSAwLjQ1NjQwOCAxMi4zNSAwLjY5ODA0NCAxMi4zNSAwLjk1VjEuOUg2LjY1VjAuOTVDNi42NSAwLjY5ODA0NCA2LjU0OTkxIDAuNDU2NDA4IDYuMzcxNzUgMC4yNzgyNDlDNi4xOTM1OSAwLjEwMDA4OSA1Ljk1MTk2IDAgNS43IDBDNS40NDgwNCAwIDUuMjA2NDEgMC4xMDAwODkgNS4wMjgyNSAwLjI3ODI0OUM0Ljg1MDA5IDAuNDU2NDA4IDQuNzUgMC42OTgwNDQgNC43NSAwLjk1VjEuOUgyLjg1QzIuMDk0MTMgMS45IDEuMzY5MjIgMi4yMDAyNyAwLjgzNDc0NiAyLjczNDc1QzAuMzAwMjY3IDMuMjY5MjIgMCAzLjk5NDEzIDAgNC43NVYxNi4xNUMwIDE2LjkwNTkgMC4zMDAyNjcgMTcuNjMwOCAwLjgzNDc0NiAxOC4xNjUzQzEuMzY5MjIgMTguNjk5NyAyLjA5NDEzIDE5IDIuODUgMTlIMTYuMTVDMTYuOTA1OSAxOSAxNy42MzA4IDE4LjY5OTcgMTguMTY1MyAxOC4xNjUzQzE4LjY5OTcgMTcuNjMwOCAxOSAxNi45MDU5IDE5IDE2LjE1VjQuNzVDMTkgMy45OTQxMyAxOC42OTk3IDMuMjY5MjIgMTguMTY1MyAyLjczNDc1QzE3LjYzMDggMi4yMDAyNyAxNi45MDU5IDEuOSAxNi4xNSAxLjlaTTE3LjEgMTYuMTVDMTcuMSAxNi40MDIgMTYuOTk5OSAxNi42NDM2IDE2LjgyMTggMTYuODIxOEMxNi42NDM2IDE2Ljk5OTkgMTYuNDAyIDE3LjEgMTYuMTUgMTcuMUgyLjg1QzIuNTk4MDQgMTcuMSAyLjM1NjQxIDE2Ljk5OTkgMi4xNzgyNSAxNi44MjE4QzIuMDAwMDkgMTYuNjQzNiAxLjkgMTYuNDAyIDEuOSAxNi4xNVY5LjVIMTcuMVYxNi4xNVpNMTcuMSA3LjZIMS45VjQuNzVDMS45IDQuNDk4MDQgMi4wMDAwOSA0LjI1NjQxIDIuMTc4MjUgNC4wNzgyNUMyLjM1NjQxIDMuOTAwMDkgMi41OTgwNCAzLjggMi44NSAzLjhINC43NVY0Ljc1QzQuNzUgNS4wMDE5NiA0Ljg1MDA5IDUuMjQzNTkgNS4wMjgyNSA1LjQyMTc1QzUuMjA2NDEgNS41OTk5MSA1LjQ0ODA0IDUuNyA1LjcgNS43QzUuOTUxOTYgNS43IDYuMTkzNTkgNS41OTk5MSA2LjM3MTc1IDUuNDIxNzVDNi41NDk5MSA1LjI0MzU5IDYuNjUgNS4wMDE5NiA2LjY1IDQuNzVWMy44SDEyLjM1VjQuNzVDMTIuMzUgNS4wMDE5NiAxMi40NTAxIDUuMjQzNTkgMTIuNjI4MiA1LjQyMTc1QzEyLjgwNjQgNS41OTk5MSAxMy4wNDggNS43IDEzLjMgNS43QzEzLjU1MiA1LjcgMTMuNzkzNiA1LjU5OTkxIDEzLjk3MTggNS40MjE3NUMxNC4xNDk5IDUuMjQzNTkgMTQuMjUgNS4wMDE5NiAxNC4yNSA0Ljc1VjMuOEgxNi4xNUMxNi40MDIgMy44IDE2LjY0MzYgMy45MDAwOSAxNi44MjE4IDQuMDc4MjVDMTYuOTk5OSA0LjI1NjQxIDE3LjEgNC40OTgwNCAxNy4xIDQuNzVWNy42WiIgZmlsbD0iIzhDOUFCMSIvPgo8L3N2Zz4K);
+    width: 19px;
+    height: 19px;
+    position: absolute;
+    right: 11px;
+    top: 11px;
+}
+.react-datepicker__tab-loop {
+    position: absolute;
+}
+.react-datepicker__tab-loop .react-datepicker-popper .react-datepicker {
+    border: none;
+    box-shadow: 0px 7px 15px rgb(66 133 244 / 19%);
+}
+.react-datepicker__tab-loop .react-datepicker-popper .react-datepicker .react-datepicker__header {
+    background: #ffffff;
+}
+.react-datepicker__tab-loop .react-datepicker-popper .react-datepicker .react-datepicker__header h2 {
+    font-size: 16px;
+    padding: 5px 0 5px 0;
+}
+.react-datepicker__tab-loop .react-datepicker-popper .react-datepicker .react-datepicker__navigation {
+    top: 9px;
+}
+.react-datepicker__day--selected, .react-datepicker__day--in-selecting-range, .react-datepicker__day--in-range, .react-datepicker__month-text--selected, .react-datepicker__month-text--in-selecting-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--selected, .react-datepicker__quarter-text--in-selecting-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--selected, .react-datepicker__year-text--in-selecting-range, .react-datepicker__year-text--in-range {
+    background-color: #4285F4;
+}
+.admin_data_tile {
+    background: #fff;
+    box-shadow: 0px 4px 4px #EAF2FF;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    gap: 20px;
+}
+.admin_data_tile .data_value_wrap h3 {
+    font-size: 16px;
+    color: #8C9AB1;
+    font-weight: 400;
+}
+.admin_data_tile .data_value_wrap h2 {
+    font-size: 36px;
+    color: #2B3674;
+    font-weight: 800;
+}
+.admin_graph_card {
+    background: #fff;
+    box-shadow: 0px 4px 4px #EAF2FF;
+    border-radius: 15px;
+    display: flex;
+    padding: 25px;
+    gap: 20px;
+}
+.admin_graph_card .grap_value_wrap h3 {
+    white-space: nowrap;
+    font-size: 16px;
+    color: #8C9AB1;
+    font-weight: 400;
+    margin: 20px 0 10px 0;
+}
+.admin_graph_card .grap_value_wrap h2 {
+    font-size: 36px;
+    color: #2B3674;
+    font-weight: 800;
+}
+.admin_graph_card .grap_value_wrap {
+    width: 100%;
+    max-width: fit-content;
+}
+.admin_graph_card .seller_graph {
+    width: 100%;
+}
+.admin_graph_card .seller_graph canvas {
+    width: 100% !important;
+}
+.seller_graph .graph_wrap {
+    position: relative;
+    padding: 0 30px 0 30px;
+}
+.seller_graph .graph_wrap button {
+    position: absolute;
+    bottom: 0px;
+    left: -2px;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+.seller_graph .graph_wrap button.right-arrow {
+    left: auto;
+    right: 0;
+}
+.seller_graph .select_years {
+    text-align: right;
+    max-width: 200px;
+    margin-left: auto;
+}
+select {
+    padding: 8px 60px 8px 10px;
+    border: solid 1px #CCD8EB;
+    border-radius: 5px;
+    color: #8C9AB1;
+    font-size: 14px;
+    appearance: none;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iNyIgdmlld0JveD0iMCAwIDEyIDciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xLjQxNjY3IDEuMTY2NzVMNiA1Ljc1MDA4TDEwLjU4MzMgMS4xNjY3NSIgc3Ryb2tlPSIjQzFDRkU0IiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    cursor: pointer;
+    outline: none;
+    width: 100%;
+}
+
+
+
+@media (max-width: 1299px){
+    .admin_graph_card {
+        flex-direction: column;
+        position: relative;
+    }
+    .admin_graph_card .grap_value_wrap {
+        width: 100%;
+        max-width: fit-content;
+        display: flex    ;
+        align-items: center;
+        gap: 15px;
+    }
+    .admin_graph_card .grap_value_wrap .data_value_wrap h3 {
+        margin: 0;
+    }
+    .admin_graph_card .grap_value_wrap .data_value_wrap h2 {
+        margin: 0;
+    }
+    .admin_data_tile .data_icon {
+        max-width: 50px;
+    }
+    .admin_data_tile {
+        padding: 15px 15px;
+        gap: 10px;
+    }
+    .admin_graph_card .grap_value_wrap .data_value_wrap h2 {
+        margin: 0;
+        font-size: 28px;
+    }
+    .admin_data_tile .data_value_wrap h2 {
+        margin: 0;
+        font-size: 26px;
+    }
+    .admin_graph_card .seller_graph .select_years {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+    }
+}
+
+@media (max-width: 767px){
+    .admin_heading_wrapper .page_heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .admin_heading_wrapper .page_heading h2{
+        font-size: 18px;
+    }
+    .react-datepicker-wrapper,
+    .react-datepicker-wrapper .react-datepicker__input-container input[type="text"]{
+        width: 100%;
+    }
+    .admin_wrapper{
+        padding: 75px 15px 15px 15px;
+    }
+}
