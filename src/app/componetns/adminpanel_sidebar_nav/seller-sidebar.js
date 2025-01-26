@@ -33,14 +33,14 @@ function SellerSidebar({ isOpen }) {
         </div>
         <div className='admin_nav'>
           <ul>
-            <li className={location.pathname === routerConstants?.bussinessInfoRoute ? 'selected' : ''}>
+            <li className={location.pathname.includes(routerConstants?.bussinessInfoRoute) ? 'selected' : ''}>
               <Link to={routerConstants?.bussinessInfoRoute}>
                 <img src='/images/dashboard-icon.svg' alt='dashboard' className='not-active' />
                 <img src='/images/dashboard-icon-active.svg' alt='dashboard' className='active' />
                 Business Info
               </Link>
             </li>
-            <li className={location.pathname === routerConstants?.myProductRoute ? 'selected' : ''}>
+            <li className={location.pathname.includes(routerConstants?.myProductRoute) ? 'selected' : ''}>
               <Link to={routerConstants?.myProductRoute}>
                 <img src='/images/categories-icon.svg' alt='categories' className='not-active' />
                 <img src='/images/categories-icon-active.svg' alt='categories' className='active' />

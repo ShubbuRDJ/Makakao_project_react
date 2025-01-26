@@ -16,4 +16,8 @@ export const apiurl = {
     GET_ADMIN_CATEGORIES_URL: 'admin/categories',
     ADD_ADMIN_CATEGORIES_URL: 'admin/categories',
     ADD_ADMIN_SUB_CATEGORIES_URL: 'admin/categories',
+
+
+    // ******************* seller user api url ***********************
+    GET_PRODUCT_LIST_URL: 'seller/products',
 }

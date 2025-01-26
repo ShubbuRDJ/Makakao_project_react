@@ -74,7 +74,7 @@ const Categories = () => {
     setTotalRecords(categoriesList?.total ?? '')
   }, [categoriesList])
 
-  // ************* handle refetch after delete ************
+  // ************* handle refetch after action perform ************
   const queryClient = useQueryClient();
   const handleRefetch = () => {
     queryClient.invalidateQueries('admin-categories-list');
