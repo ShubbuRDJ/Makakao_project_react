@@ -29,6 +29,14 @@ function MainRoute() {
 
         <Route path="*" element={<Navigate to="/" />} />
       </Route>
+
+
+      {/* <Route path="/seller" element={<SellerWrapper />}>
+        <Route path="addbusiness" element={<AddBusiness />} />
+        <Route path="myproducts" element={<MyProducts />} />
+        <Route path="addproduct" element={<AddNewProduct />} />
+      </Route> */}
+
     </Routes>
   );
 }

@@ -7,16 +7,17 @@
     position: relative;
 }
 .search_and_create_categories .searc_categories .input_text_box {
-    height: 43px;
     padding: 0 40px 0 15px;
-    border: solid 1px #CCD8EB;
+    border: solid 2px #EAEAEA;
+    background-color: #fff;
+    height: 50px;
     outline: none;
     border-radius: 10px;
 }
 .search_and_create_categories .searc_categories svg {
     position: absolute;
     right: 12px;
-    top: 12px;
+    top: 16px;
 }
 .category_list_wrapper .category_list_head {
     background: rgb(255 255 255 / 51%);
