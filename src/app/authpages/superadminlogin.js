@@ -36,14 +36,16 @@ function SuperAdminLogin() {
         email_or_phone: values?.email,
         password: values?.password,
       }
-      const res = await postRequest(apiurl?.LOGIN_URL, payload);
+      const res = await postRequest(apiurl?.ADMIN_LOGIN_URL, payload);
       if (res?.data?.status) {
         setIsLoading(false);
 
         const token = res?.data?.data?.token;
         const secretKey = process.env.REACT_APP_SECRET_KEY;
         const encryptedToken = CryptoJS.AES.encrypt(token, secretKey).toString();
+        const encryptedUserType = CryptoJS.AES.encrypt('SUPER_ADMIN', secretKey).toString();
         localStorage.setItem('ACCESS_TOKEN', encryptedToken)
+        localStorage.setItem('USER_TYPE', encryptedUserType)
         navigate(routerConstants?.dashboardRoute);
         toaster('success', res?.data?.message);
       }

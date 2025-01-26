@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import './style.css';
 import Footer from '../../../componetns/Footer/Footer';
 import { Link } from 'react-router-dom';
+import routerConstants from '../../../../constants/routerConstants';
 
 function MyProducts() {
 
@@ -17,7 +18,7 @@ function MyProducts() {
             <div className='admin_heading_wrapper'>
               <div className='page_heading'>
                 <h2>My Products</h2>
-                <Link to="/seller/addproduct" className='text-decoration-none'>
+                <Link to={routerConstants?.addProductRoute} className='text-decoration-none'>
                   <Button variant="success" className='d-flex align-items-center gap-2 px-3 fs-6' style={{height: "43px"}}>
                       <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="6" y="0.5" width="2" height="14" rx="1" fill="white"/>

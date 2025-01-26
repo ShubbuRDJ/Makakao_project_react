@@ -4,64 +4,66 @@ import Button from 'react-bootstrap/Button';
 import { Link, useNavigate } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import routerConstants from '../../constants/routerConstants';
-import toaster from '../../utility/toaster/toaster';
+import CryptoJS from "crypto-js";
+import { useFormik } from 'formik';
+import { loginSchema } from '../../services/yup-validation-schemas';
 import { postRequest } from '../../services/axios-api-request/axios_api_Request';
 import { apiurl } from '../../constants/apiURLsConstants';
-import { useFormik } from 'formik';
-import { signUpSchema } from '../../services/yup-validation-schemas';
-import Loader from '../componetns/loader/Loader';
+import toaster from '../../utility/toaster/toaster';
 
 const initialValues = {
-  full_name: '',
-  role: '',
   email: '',
-  phone: '',
   password: '',
-  device_id: 'Wdedbb323',
+  role: '',
+  device_id: '',
   device_type: 'WEB',
   ip_address: '',
   fcm_token: '',
 }
 
-function SellerSignup() {
+function SellerSignin() {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  const { values, handleChange, handleBlur, setFieldValue, handleSubmit, errors, touched } =
+  const { values, handleChange, handleBlur, handleSubmit, setFieldValue, errors, touched } =
     useFormik({
       initialValues,
-      validationSchema: signUpSchema,
+      validationSchema: loginSchema,
       onSubmit: (values, action) => {
         handleLogin(values);
       },
     });
 
   const handleLogin = async (values) => {
-    const { email, password, device_id, device_type, ip_address, fcm_token, phone, full_name, role } = values;
+    const { email, password, device_id, device_type, ip_address, fcm_token, role } = values;
 
     if (!role) {
       toaster('error', 'Please select role first');
       return;
     }
-    
+
     if (!isLoading) {
       setIsLoading(true);
       const payload = {
-        email,
-        phone,
-        full_name,
+        email_or_phone: email,
         password,
-        role,
         device_id,
+        role,
         device_type,
         ip_address,
-        fcm_token
+        fcm_token,
       }
-      const res = await postRequest(apiurl?.SIGNUP_URL, payload);
+      const res = await postRequest(apiurl?.LOGIN_URL, payload);
       if (res?.data?.status) {
         setIsLoading(false);
+        const token = res?.data?.data?.token;
+        const secretKey = process.env.REACT_APP_SECRET_KEY;
+        const encryptedToken = CryptoJS.AES.encrypt(token, secretKey).toString();
+        const encryptedUserType = CryptoJS.AES.encrypt(role, secretKey).toString();
+        localStorage.setItem('ACCESS_TOKEN', encryptedToken)
+        localStorage.setItem('USER_TYPE', encryptedUserType)
+        navigate(routerConstants?.bussinessInfoRoute);
         toaster('success', res?.data?.message);
-        navigate(routerConstants?.loginRoute);
       }
       else {
         setIsLoading(false);
@@ -69,6 +71,7 @@ function SellerSignup() {
       }
     }
   }
+
 
   return (
     <>
@@ -83,7 +86,7 @@ function SellerSignup() {
         <div className='right_form_wrapper'>
           <div className='form_wrap'>
             <div className='logo'><img src='/images/logo.png' alt='logo' /></div>
-            <div className='auth_heading mt-3'>Sign Up</div>
+            <div className='auth_heading mt-3'>Sign In</div>
 
             <form onSubmit={handleSubmit} className='auth_form'>
               <div className='select-seller-type'>
@@ -130,29 +133,13 @@ function SellerSignup() {
               <div className='row'>
                 <div className='col-lg-12'>
                   <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                    <Form.Label>Full Name</Form.Label>
-                    <Form.Control
-                      type="text"
-                      placeholder="Type your full name"
-                      value={values?.full_name}
-                      onChange={handleChange}
-                      name="full_name"
-                      onBlur={handleBlur}
-                    />
-                    {errors.full_name && touched.full_name ? (
-                      <p className="custom-makakao-form-error">{errors.full_name}</p>
-                    ) : null}
-                  </Form.Group>
-                </div>
-                <div className='col-lg-6'>
-                  <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                     <Form.Label>Email</Form.Label>
                     <Form.Control
-                      type="email"
-                      placeholder="Type your email"
+                      type='email'
+                      name='email'
                       value={values?.email}
+                      placeholder='info@gmail.com'
                       onChange={handleChange}
-                      name="email"
                       onBlur={handleBlur}
                     />
                     {errors.email && touched.email ? (
@@ -160,32 +147,15 @@ function SellerSignup() {
                     ) : null}
                   </Form.Group>
                 </div>
-                <div className='col-lg-6'>
-                  <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                    <Form.Label>Phone</Form.Label>
-                    <Form.Control
-                      type="text"
-                      placeholder="Type your phone"
-                      value={values?.phone}
-                      onChange={handleChange}
-                      name="phone"
-                      onBlur={handleBlur}
-                      maxLength={10}
-                    />
-                    {errors.phone && touched.phone ? (
-                      <p className="custom-makakao-form-error">{errors.phone}</p>
-                    ) : null}
-                  </Form.Group>
-                </div>
                 <div className='col-lg-12'>
                   <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                     <Form.Label>Password</Form.Label>
                     <Form.Control
-                      type="password"
-                      placeholder="Type your password"
+                      type='password'
+                      name='password'
                       value={values?.password}
+                      placeholder='***********'
                       onChange={handleChange}
-                      name="password"
                       onBlur={handleBlur}
                     />
                     {errors.password && touched.password ? (
@@ -193,20 +163,20 @@ function SellerSignup() {
                     ) : null}
                   </Form.Group>
                 </div>
+
+                <div className='input_wrap text-right'>
+                  <Link to="/">Forgot your password?</Link>
+                </div>
+
                 <div className='col-lg-12 mb-3'>
-                  <Button type='submit' variant="primary" className="w-100">
-                    {
-                      isLoading ?
-                        <div style={{ display: 'flex', justifyContent: 'center' }}>
-                          <Loader dotsColor={'#ffffff'} />
-                        </div>
-                        :
-                        'Sign Up'
-                    }
-                  </Button>
+                  <Button
+                    variant="primary"
+                    className="w-100"
+                    type='submit'
+                  >Sign In</Button>
                 </div>
                 <div className='col-lg-12 mb-3'>
-                  <p style={{ fontSize: "14px" }}>Already have an account? <Link to={routerConstants?.loginRoute}>Log in</Link></p>
+                  <p style={{ fontSize: "14px" }}>Don't have any account? <Link to={routerConstants?.signupRoute}>Sign up</Link></p>
                 </div>
               </div>
 
@@ -224,4 +194,4 @@ function SellerSignup() {
   )
 }
 
-export default SellerSignup
+export default SellerSignin

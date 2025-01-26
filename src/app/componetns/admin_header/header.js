@@ -86,7 +86,7 @@ function Header() {
             <path d="M19.4999 22.8854C21.3696 22.8854 22.8853 21.3697 22.8853 19.5C22.8853 17.6303 21.3696 16.1146 19.4999 16.1146C17.6302 16.1146 16.1145 17.6303 16.1145 19.5C16.1145 21.3697 17.6302 22.8854 19.4999 22.8854Z" fill="#4285F4" />
           </svg>
         </div>
-        <div className='logo' onClick={handleOpenMenu}>
+        <div className='logo' style={{cursor:'pointer'}} onClick={handleOpenMenu}>
           <img src='/images/user-img.png' alt='user' />
         </div>
       </div>
