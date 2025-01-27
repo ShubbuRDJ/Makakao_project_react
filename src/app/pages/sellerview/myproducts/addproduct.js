@@ -145,9 +145,11 @@ function AddNewProduct() {
       if (res?.data?.status) {
         toaster('success', res?.data?.message);
         if (selectedImages?.length) {
-          const resImageUpload = await postRequest(`${apiurl?.ADD_SELLER_PRODUCT_MULT_IMAGE_URL}`, {
-            images: selectedImages
+          let formDataFile = new FormData();
+          selectedImages?.forEach((image,index) => {
+            formDataFile.append(`images[${index}]`,image.file)
           })
+          const resImageUpload = await postRequest(`${apiurl?.ADD_SELLER_PRODUCT_MULT_IMAGE_URL}`, formDataFile)
           if (resImageUpload?.data?.status) {
             toaster('success', resImageUpload?.data?.message);
             setIsLoadingAdd(false);
@@ -165,6 +167,9 @@ function AddNewProduct() {
       }
     }
   }
+
+
+  console.log(selectedImages, 'vifeefejfoedoc')
 
 
 
