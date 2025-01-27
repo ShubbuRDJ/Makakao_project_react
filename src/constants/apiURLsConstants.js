@@ -20,4 +20,6 @@ export const apiurl = {
 
     // ******************* seller user api url ***********************
     GET_PRODUCT_LIST_URL: 'seller/products',
+    GET_BUSSINESS_DATA_URL: 'seller/business',
+    ADD_BUSSINESS_DATA_URL: 'seller/business',
 }
