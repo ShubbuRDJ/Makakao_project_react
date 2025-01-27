@@ -116,3 +116,24 @@ export const addSellerBussinessSchema = Yup.object({
         .required("Please select the Bussiness Type to move ahead")
     ,
 });
+
+export const addSellerProductSchema = Yup.object({
+    product_name: Yup.string()
+        .required("Please enter Product Name to move ahead")
+        .min(3, "Product Name too short should contain at least 3 characters.")
+    ,
+    price: Yup.string()
+        .required("Please enter Price to move ahead")
+    ,
+    short_desc: Yup.string()
+        .required("Please enter Short Description to move ahead")
+        .min(3, "Short Description too short should contain at least 3 characters.")
+    ,
+    desc: Yup.string()
+        .required("Please enter Description to move ahead")
+        .min(3, "Description too short should contain at least 3 characters.")
+    ,
+    price_unit: Yup.string()
+        .required("Please select the Price Unit to move ahead")
+    ,
+});

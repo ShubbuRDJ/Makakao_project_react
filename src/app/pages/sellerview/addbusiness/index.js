@@ -150,7 +150,7 @@ function AddBusiness() {
                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                       <Form.Label>Business type</Form.Label>
                       <select
-                        id="Selectstatus"
+                        id="Select status"
                         name='business_type'
                         value={values?.business_type}
                         onChange={handleChange}

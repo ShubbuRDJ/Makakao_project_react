@@ -22,4 +22,7 @@ export const apiurl = {
     GET_PRODUCT_LIST_URL: 'seller/products',
     GET_BUSSINESS_DATA_URL: 'seller/business',
     ADD_BUSSINESS_DATA_URL: 'seller/business',
+    ADD_SELLER_PRODUCT_WITH_CATEGORY_URL: 'seller/categories',
+    ADD_SELLER_PRODUCT_WITH_SUBCATEGORY_URL: 'seller/sub-categories',
+    ADD_SELLER_PRODUCT_MULT_IMAGE_URL: 'seller/products',
 }
