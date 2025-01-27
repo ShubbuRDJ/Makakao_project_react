@@ -90,7 +90,7 @@ export const addCategorySchema = Yup.object({
     ,
 });
 
-export const addSellerBussinessSchema = Yup.object({
+export const addSellerBussinessOrgSchema = Yup.object({
     business_name: Yup.string()
         .required("Please enter Bussiness Name to move ahead")
         .min(3, "Bussiness Name too short should contain at least 3 characters.")
@@ -106,6 +106,33 @@ export const addSellerBussinessSchema = Yup.object({
     iban_number: Yup.string()
         .required("Please enter Iban Number to move ahead")
         .min(3, "Iban Number too short should contain at least 3 characters.")
+    ,
+    bank_account_number: Yup.string()
+        .required("Please enter Bank Account Number to move ahead")
+        .min(14, "Bank Account Number too short should contain at least 14 characters.")
+        .max(16, "Bank Account Number too long should contain at most 16 characters.")
+    ,
+    business_type: Yup.string()
+        .required("Please select the Bussiness Type to move ahead")
+    ,
+});
+
+export const addSellerBussinessSchema = Yup.object({
+    business_name: Yup.string()
+        .required("Please enter Bussiness Name to move ahead")
+        .min(3, "Bussiness Name too short should contain at least 3 characters.")
+    ,
+    business_address: Yup.string()
+        .required("Please enter Bussiness Address to move ahead")
+        .min(3, "Bussiness Address too short should contain at least 3 characters.")
+    ,
+    identity_proof_id: Yup.string()
+        .required("Please enter Identity Proof Id to move ahead")
+        .min(3, "Identity Proof Id too short should contain at least 3 characters.")
+    ,
+    address_proof_id: Yup.string()
+        .required("Please enter Address Proof Id to move ahead")
+        .min(3, "Address Proof Id too short should contain at least 3 characters.")
     ,
     bank_account_number: Yup.string()
         .required("Please enter Bank Account Number to move ahead")
