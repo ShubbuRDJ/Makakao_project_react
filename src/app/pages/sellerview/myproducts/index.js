@@ -11,6 +11,7 @@ import { useQuery, useQueryClient } from 'react-query';
 import toaster from '../../../../utility/toaster/toaster';
 import { apiurl } from '../../../../constants/apiURLsConstants';
 import { getRequest } from '../../../../services/axios-api-request/axios_api_Request';
+import { formatDate } from '../../../../utility/common';
 
 function MyProducts() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -69,11 +70,7 @@ function MyProducts() {
     setTotalRecords(productsList?.total ?? '')
   }, [productsList])
 
-  // ************* handle refetch after action perform ************
-  const queryClient = useQueryClient();
-  const handleRefetch = () => {
-    queryClient.invalidateQueries('admin-categories-list');
-  };
+  console.log(productsList, 'cendiidneidnei')
 
   return (
     <>
@@ -127,195 +124,41 @@ function MyProducts() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td><Form.Check aria-label="option 1" /></td>
-                <td>
-                  <div className='product_list_details'>
-                    <div className='p_img'>
-                      <img src='/images/product-img.jpg' alt='produc image' />
-                    </div>
-                    <div className='p_details'>
-                      <h4 className='p_title'>SAMSUNG Galaxy A33 (Awesome Blue, 128 GB)  (6 GB RAM)</h4>
-                      <p className='p_dec'>6 GB RAM | 128 GB ROM | Expandable Upto 1 TB</p>
-                      <p className='p_date'>24 Apr 2021</p>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <span className='cat_sub_cat'>Phones</span>
-                </td>
-                <td><span className='bid_or_price'>Price</span></td>
-                <td><span className='p_price'>₹ 24,999</span></td>
-                <td>
-                  <span className='product_action pending_product'>Pending</span>
-                </td>
-                <td>
-                  <span className='product_action view_product'>View</span>
-                  <span className='product_action view_product'>Edit</span>
-                </td>
-              </tr>
-              <tr>
-                <td><Form.Check aria-label="option 1" /></td>
-                <td>
-                  <div className='product_list_details'>
-                    <div className='p_img'>
-                      <img src='/images/product-img.jpg' alt='produc image' />
-                    </div>
-                    <div className='p_details'>
-                      <h4 className='p_title'>SAMSUNG Galaxy A33 (Awesome Blue, 128 GB)  (6 GB RAM)</h4>
-                      <p className='p_dec'>6 GB RAM | 128 GB ROM | Expandable Upto 1 TB</p>
-                      <p className='p_date'>24 Apr 2021</p>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <span className='cat_sub_cat'>Phones</span>
-                </td>
-                <td><span className='bid_or_price'>Price</span></td>
-                <td><span className='p_price'>₹ 24,999</span></td>
-                <td>
-                  <span className='product_action reject_product'>Reject</span>
-                </td>
-                <td>
-                  <span className='product_action view_product'>View</span>
-                  <span className='product_action view_product'>Edit</span>
-                </td>
-              </tr>
-              <tr>
-                <td><Form.Check aria-label="option 1" /></td>
-                <td>
-                  <div className='product_list_details'>
-                    <div className='p_img'>
-                      <img src='/images/product-img.jpg' alt='produc image' />
-                    </div>
-                    <div className='p_details'>
-                      <h4 className='p_title'>SAMSUNG Galaxy A33 (Awesome Blue, 128 GB)  (6 GB RAM)</h4>
-                      <p className='p_dec'>6 GB RAM | 128 GB ROM | Expandable Upto 1 TB</p>
-                      <p className='p_date'>24 Apr 2021</p>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <span className='cat_sub_cat'>Phones</span>
-                </td>
-                <td><span className='bid_or_price'>Price</span></td>
-                <td><span className='p_price'>₹ 24,999</span></td>
-                <td>
-                  <span className='product_action accept_product'>Accept</span>
-                </td>
-                <td>
-                  <span className='product_action view_product'>View</span>
-                  <span className='product_action view_product'>Edit</span>
-                </td>
-              </tr>
-              <tr>
-                <td><Form.Check aria-label="option 1" /></td>
-                <td>
-                  <div className='product_list_details'>
-                    <div className='p_img'>
-                      <img src='/images/product-img.jpg' alt='produc image' />
-                    </div>
-                    <div className='p_details'>
-                      <h4 className='p_title'>SAMSUNG Galaxy A33 (Awesome Blue, 128 GB)  (6 GB RAM)</h4>
-                      <p className='p_dec'>6 GB RAM | 128 GB ROM | Expandable Upto 1 TB</p>
-                      <p className='p_date'>24 Apr 2021</p>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <span className='cat_sub_cat'>Phones</span>
-                </td>
-                <td><span className='bid_or_price'>Price</span></td>
-                <td><span className='p_price'>₹ 24,999</span></td>
-                <td>
-                  <span className='product_action accept_product'>Accept</span>
-                </td>
-                <td>
-                  <span className='product_action view_product'>View</span>
-                  <span className='product_action view_product'>Edit</span>
-                </td>
-              </tr>
-              <tr>
-                <td><Form.Check aria-label="option 1" /></td>
-                <td>
-                  <div className='product_list_details'>
-                    <div className='p_img'>
-                      <img src='/images/product-img.jpg' alt='produc image' />
-                    </div>
-                    <div className='p_details'>
-                      <h4 className='p_title'>SAMSUNG Galaxy A33 (Awesome Blue, 128 GB)  (6 GB RAM)</h4>
-                      <p className='p_dec'>6 GB RAM | 128 GB ROM | Expandable Upto 1 TB</p>
-                      <p className='p_date'>24 Apr 2021</p>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <span className='cat_sub_cat'>Phones</span>
-                </td>
-                <td><span className='bid_or_price'>Price</span></td>
-                <td><span className='p_price'>₹ 24,999</span></td>
-                <td>
-                  <span className='product_action accept_product'>Accept</span>
-                </td>
-                <td>
-                  <span className='product_action view_product'>View</span>
-                  <span className='product_action view_product'>Edit</span>
-                </td>
-              </tr>
-              <tr>
-                <td><Form.Check aria-label="option 1" /></td>
-                <td>
-                  <div className='product_list_details'>
-                    <div className='p_img'>
-                      <img src='/images/product-img.jpg' alt='produc image' />
-                    </div>
-                    <div className='p_details'>
-                      <h4 className='p_title'>SAMSUNG Galaxy A33 (Awesome Blue, 128 GB)  (6 GB RAM)</h4>
-                      <p className='p_dec'>6 GB RAM | 128 GB ROM | Expandable Upto 1 TB</p>
-                      <p className='p_date'>24 Apr 2021</p>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <span className='cat_sub_cat'>Phones</span>
-                </td>
-                <td><span className='bid_or_price'>Price</span></td>
-                <td><span className='p_price'>₹ 24,999</span></td>
-                <td>
-                  <span className='product_action reject_product'>Reject</span>
-                </td>
-                <td>
-                  <span className='product_action view_product'>View</span>
-                  <span className='product_action view_product'>Edit</span>
-                </td>
-              </tr>
-              <tr>
-                <td><Form.Check aria-label="option 1" /></td>
-                <td>
-                  <div className='product_list_details'>
-                    <div className='p_img'>
-                      <img src='/images/product-img.jpg' alt='produc image' />
-                    </div>
-                    <div className='p_details'>
-                      <h4 className='p_title'>SAMSUNG Galaxy A33 (Awesome Blue, 128 GB)  (6 GB RAM)</h4>
-                      <p className='p_dec'>6 GB RAM | 128 GB ROM | Expandable Upto 1 TB</p>
-                      <p className='p_date'>24 Apr 2021</p>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <span className='cat_sub_cat'>Phones</span>
-                </td>
-                <td><span className='bid_or_price'>Price</span></td>
-                <td><span className='p_price'>₹ 24,999</span></td>
-                <td>
-                  <span className='product_action accept_product'>Accept</span>
-                </td>
-                <td>
-                  <span className='product_action view_product'>View</span>
-                  <span className='product_action view_product'>Edit</span>
-                </td>
-              </tr>
+              {
+                productsList?.results?.map((product, index) => (
+                  <tr key={`seller-product-${index + 1}`}>
+                    <td><Form.Check aria-label="option 1" /></td>
+                    <td>
+                      <div className='product_list_details'>
+                        <div className='p_img'>
+                          <img src={product?.images[0]} alt='product' />
+                        </div>
+                        <div className='p_details'>
+                          <h4 className='p_title'>{product?.name}</h4>
+                          <p className='p_dec'>{product?.short_description}</p>
+                          <p className='p_date'>{formatDate(product?.created_at)}</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <span className='cat_sub_cat'>{product?.category_name}{product?.sub_category_name ? ` / ${product?.sub_category_name}` : ''}</span>
+                    </td>
+                    <td><span className='bid_or_price'>{product?.is_bid_based ? 'Biding' : 'Price'}</span></td>
+                    <td><span className='p_price'>{product?.price_unit} {product?.price}</span></td>
+                    <td>
+                      <span className={`product_action ${(product?.verified === null) ? 'pending' : (product?.verified === true) ? 'accept' : 'reject'}_product`}>
+                        {
+                          (product?.verified === null) ? 'Pending' : (product?.verified === true) ? 'Approved' : 'Reject'
+                        }
+                      </span>
+                    </td>
+                    <td>
+                      <span className='product_action view_product'>View</span>
+                      <span className='product_action view_product'>Edit</span>
+                    </td>
+                  </tr>
+                ))
+              }
 
             </tbody>
           </Table>
