@@ -146,10 +146,10 @@ function AddNewProduct() {
         toaster('success', res?.data?.message);
         if (selectedImages?.length) {
           let formDataFile = new FormData();
-          selectedImages?.forEach((image,index) => {
-            formDataFile.append(`images[${index}]`,image.file)
+          selectedImages?.forEach((image) => {
+            formDataFile.append('images', image?.file)
           })
-          const resImageUpload = await postRequest(`${apiurl?.ADD_SELLER_PRODUCT_MULT_IMAGE_URL}`, formDataFile)
+          const resImageUpload = await postRequest(`${apiurl?.ADD_SELLER_PRODUCT_MULT_IMAGE_URL}/${res?.data?.data?.id}/images`, formDataFile)
           if (resImageUpload?.data?.status) {
             toaster('success', resImageUpload?.data?.message);
             setIsLoadingAdd(false);
